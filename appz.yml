@@ -39,4 +39,4 @@ properties:
   AUTH_KEY:
      vault: AUTH_KEY
   AUTH_ENABLE: 1
-  revision : 17
+  revision : 18
