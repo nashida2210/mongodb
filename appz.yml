@@ -1,7 +1,7 @@
 app:
   name: AppzMongoDB
   code: AMDB
-  notify: aramanan@ecloudcontrol.com
+  notify: nmeeran@ecloudcontrol.com
 
 build:
   version: 4.4
