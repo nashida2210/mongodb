@@ -11,7 +11,7 @@ build:
   image_template: mongo-4.4
   
 deploy:
-  context: aryam21/DEV
+  context: nashida2210/DEV
   type: statefulset
   replicas: 1
   port:
