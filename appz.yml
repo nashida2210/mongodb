@@ -55,7 +55,7 @@ properties:
   BACKUPFILE: ksfetest,test
   REPLICATION: 1
   MASTER_ENABLE: "no"
-  AUTH_ENABLE: 0
+  AUTH_ENABLE: 1
   S3_BUCKET: ksfetestbucket
   
   MONGODB_HOST: 127.0.0.1
