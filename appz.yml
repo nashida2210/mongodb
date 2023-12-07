@@ -1,19 +1,19 @@
 app:
-  name: AppzMongoDB
-  code: AMDB
+  name: mongodb
+  code: MONGODB
   notify: nmeeran@ecloudcontrol.com
 
 build:
-  version: 4.4
+  version: 6.0
   env: DEV
   build_file: none
   output_files: output/*.zip
-  image_template: mongo-4.4
+  image_template: mongo-6.0
   
 deploy:
-  context: nashida2210/DEV
+  context: nashida2210/dev
   type: statefulset
-  replicas: 1
+  replicas: 2
   port:
   - 27017
   - 9216
@@ -24,19 +24,42 @@ volumes:
   name: mongo-data
   size: 5Gi
   mode: ReadWriteOnce
-- claim: mongo-key
+  
+- claim: mongo-keys
   mount: /appz/keys
-  name: key
-  size: 5Gi 
+  name: mongo-keys
+  size: 1Gi
+  mode: ReadWriteOnce
+  
+- claim: mongo-backup
+  mount: /appz/backup
+  name: mongo-backup
+  size: 5Gi
+  mode: ReadWriteOnce
   
 properties:
   DB_USER_ADMIN: admin
-  DB_USER_ADMIN_PASSWORD:
-     vault: DB_USER_ADMIN_PASSWORD
-  MONGO_MDM_PASSWORD:
-     vault: MONGO_MDM_PASSWORD
-  REPLICATION: 3 
-  AUTH_KEY:
-     vault: AUTH_KEY
+  DB_USER_ADMIN_PASSWORD: 
+    vault: DB_USER_ADMIN_PASSWORD
+  MONGO_USER_PASSWORD: 
+    vault: MONGO_USER_PASSWORD
+  AUTH_KEY: 
+    vault: AUTH_KEY
+  ENCRYPTION_KEY:
+    vault: ENCRYPTION_KEY
+  #AWS_ACCESS_KEY_ID:
+    #vault: AWS_ACCESS_KEY_ID
+  #AWS_SECRET_ACCESS_KEY:
+    #vault: AWS_SECRET_ACCESS_KEY
+  AWS_DEFAULT_REGION: us-east-2
+  BACKUPFILE: "*"
+  REPLICATION: 2
+  MASTER_ENABLE: "no"
   AUTH_ENABLE: 1
-  revision : 1
+  S3_BUCKET: ksfetestbucket
+  
+  MONGODB_HOST: 127.0.0.1
+  MONGODB_PORT: 27017
+  MONGO_BACKUP_TIME: 2
+  MONGO_BACKUP_DAYS: 7
+  revision : 7
