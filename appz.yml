@@ -4,7 +4,7 @@ app:
   notify: nmeeran@ecloudcontrol.com
 
 build:
-  version: 6.0
+  version: 6a.0
   env: DEV
   build_file: none
   output_files: output/*.zip
@@ -54,7 +54,7 @@ properties:
   AWS_DEFAULT_REGION: us-east-2
   BACKUPFILE: ksfetest,test
   REPLICATION: 3
-  MASTER_ENABLE: "yes"
+  MASTER_ENABLE: "no"
   AUTH_ENABLE: 1
   S3_BUCKET: ksfetestbucket
   
