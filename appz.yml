@@ -13,7 +13,7 @@ build:
 deploy:
   context: nashida2210/DEV
   type: statefulset
-  replicas: 2
+  replicas: 3
   port:
   - 27017
   - 9216
@@ -56,7 +56,7 @@ properties:
     #vault: AWS_SECRET_ACCESS_KEY
   AWS_DEFAULT_REGION: us-east-2
   BACKUPFILE: ksfetest,test
-  REPLICATION: 2
+  REPLICATION: 3
   MASTER_ENABLE: "yes"
   AUTH_ENABLE: 1
   S3_BUCKET: ksfetestbucket
@@ -65,4 +65,4 @@ properties:
   MONGODB_PORT: 27017
   MONGO_BACKUP_TIME: 2
   MONGO_BACKUP_DAYS: 7
-  revision : 9
+  revision : 10
