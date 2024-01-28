@@ -57,7 +57,7 @@ properties:
   AWS_DEFAULT_REGION: us-east-2
   BACKUPFILE: ksfetest,test
   REPLICATION: 3
-  MASTER_ENABLE: "yes"
+  MASTER_ENABLE: "no"
   AUTH_ENABLE: 1
   S3_BUCKET: ksfetestbucket
   
