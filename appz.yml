@@ -57,7 +57,7 @@ properties:
   AWS_DEFAULT_REGION: us-east-2
   BACKUPFILE: ksfetest,test
   REPLICATION: 2
-  MASTER_ENABLE: "no"
+  MASTER_ENABLE: "yes"
   AUTH_ENABLE: 1
   S3_BUCKET: ksfetestbucket
   
@@ -65,4 +65,4 @@ properties:
   MONGODB_PORT: 27017
   MONGO_BACKUP_TIME: 2
   MONGO_BACKUP_DAYS: 7
-  revision : 19
+  revision : 20
